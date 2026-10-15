@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage{cancel}
 \usepackage{hyperref}
+\usepackage[italian]{babel}
+\usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{arrows.meta}
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}
@@ -340,5 +342,218 @@ $$\begin{cases}
 \end{tikzpicture}
 \end{center}
     $$\boxed{x\ge3}$$
+\end{exercise}
+$$\sqrt{A\left(x\right)}<B\left(x\right)\quad\begin{cases}
+	A\left(x\right)\ge 0\\
+	B\left(x\right)>0\\
+	A\left(x\right)<B^2\left(x\right)
+\end{cases}$$
+$$\sqrt{A\left(x\right)}>B\left(x\right)$$
+$$\begin{cases}
+	B\left(x\right)<0\\
+	A\left(x\right)\ge0
+\end{cases}\cup\begin{cases}
+B\left(x\right)\ge0\\
+A\left(x\right)>B^2\left(x\right)
+\end{cases}$$
+\begin{exercise}
+	$$\sqrt{9-x^2}>x+3$$
+	$$\begin{cases}
+		x+3<0\\
+		9-x^2\ge0
+	\end{cases}\cup\begin{cases}
+	x+3\ge0\\
+	9-x^2>\left(x+3\right)^2
+	\end{cases}$$
+	$$\begin{cases}
+		x<-3\\
+		-3\le x\ge3
+	\end{cases}\cup\begin{cases}
+	x\ge-3\\
+	\cancel{9}-x^2>x^2+6x+\cancel{9}
+	\end{cases}$$
+	$$\begin{cases}
+		//\\
+		//
+	\end{cases}\cup\begin{cases}
+	x\ge-3\\
+	2x^2+6x<0
+	\end{cases}$$
+	$$\begin{cases}
+		//\\
+		2x\left(x+3\right)<0
+	\end{cases}$$
+	$$\begin{cases}
+		x<-3\\
+		-3\le x\le3
+	\end{cases}\cup\begin{cases}
+	x\ge-3\\
+	-3<x<0
+	\end{cases}$$
+	\begin{center}
+		\begin{tikzpicture}[scale=1.1, >=stealth]
+			
+			% --- PRIMO GRAFICO (a sinistra) ---
+			\begin{scope}[shift={(0,0)}]
+				% Linea orizzontale superiore
+				\draw[thick] (-0.5, 0) -- (4, 0);
+				
+				% Etichette in alto
+				\node[above] at (1, 0) {$-3$};
+				\node[above] at (3, 0) {$3$};
+				
+				% Linee verticali
+				\draw[thick] (1, 0) -- (1, -3.5);
+				\draw[thick] (3, 0) -- (3, -3.5);
+				
+				% Linea in entrata da sinistra con cerchietto vuoto a -3
+				\draw[thick] (-0.5, -1.2) -- (1, -1.2);
+				\draw[thick, fill=white] (1, -1.2) circle (2.5pt);
+				
+				% Pallini pieni in basso e segmento di collegamento
+				\filldraw (1, -2.5) circle (2.5pt);
+				\filldraw (3, -2.5) circle (2.5pt);
+				\draw[thick] (1, -2.5) -- (3, -2.5);
+			\end{scope}
+			
+			% --- SECONDO GRAFICO (a destra) ---
+			\begin{scope}[shift={(6.5,0)}]
+				% Linea orizzontale superiore
+				\draw[thick] (-0.5, 0) -- (4, 0);
+				
+				% Etichette in alto
+				\node[above] at (1, 0) {$-3$};
+				\node[above] at (3, 0) {$0$};
+				
+				% Linee verticali
+				\draw[thick] (1, 0) -- (1, -3.5);
+				\draw[thick] (3, 0) -- (3, -3.5);
+				
+				% Pallino pieno a -3 con linea verso destra
+				\filldraw (1, -1.0) circle (2.5pt);
+				\draw[thick] (1, -1.0) -- (4, -1.0);
+				
+				% Cerchietti vuoti in basso e segmento di collegamento
+				\draw[thick, fill=white] (1, -2.5) circle (2.5pt);
+				\draw[thick, fill=white] (3, -2.5) circle (2.5pt);
+				\draw[thick] (1, -2.5) -- (3, -2.5);
+			\end{scope}
+			
+		\end{tikzpicture}
+	\end{center}
+	$$\nexists x\in\mathbb{R}\cup-3< x<0$$
+	$$-3< x<0$$
+\end{exercise}
+\begin{exercise}
+	$$\sqrt{x+3}>x-5$$
+	$$\begin{cases}
+		x-5<0\\
+		x+3\ge0
+	\end{cases}\cup\begin{cases}
+	x-5\ge0\\
+	x-3>\left(x-5\right)^2
+	\end{cases}$$
+	$$\begin{cases}
+		x<5\\
+		x\ge3
+	\end{cases}\begin{cases}
+	x\ge5\\
+	x-3>x^2-10x+25
+	\end{cases}$$
+	$$\begin{cases}
+		x\ge5\\
+		x^2-11x+28<0\quad\text{II}^\circ
+	\end{cases}$$
+	$$x^2-11x+28<0\quad \left(x-7\right)\left(x-4\right)<0$$
+	$$\begin{cases}
+		x<5\\
+		x\ge3
+	\end{cases}\begin{cases}
+	x\ge5\\
+	4<x<7
+	\end{cases}$$
+	\begin{center}
+		\begin{tikzpicture}[scale=1.1, >=stealth]
+			
+			% --- PRIMO GRAFICO (a sinistra) ---
+			\begin{scope}[shift={(0,0)}]
+				% Linea orizzontale superiore
+				\draw[thick] (-0.5, 0) -- (4.5, 0);
+				
+				% Etichette in alto
+				\node[above] at (1, 0) {$3$};
+				\node[above] at (3, 0) {$5$};
+				
+				% Linee verticali
+				\draw[thick] (1, 0) -- (1, -3.5);
+				\draw[thick] (3, 0) -- (3, -3.5);
+				
+				% Linea da sinistra con cerchietto vuoto a 5
+				\draw[thick] (-0.5, -1.0) -- (3, -1.0);
+				\draw[thick, fill=white] (3, -1.0) circle (2.5pt);
+				
+				% Pallino pieno a 3 con linea verso destra
+				\filldraw (1, -2.2) circle (2.5pt);
+				\draw[thick] (1, -2.2) -- (4.5, -2.2);
+			\end{scope}
+			
+			% --- SECONDO GRAFICO (a destra) ---
+			\begin{scope}[shift={(6.5,0)}]
+				% Linea orizzontale superiore
+				\draw[thick] (-0.5, 0) -- (5, 0);
+				
+				% Etichette in alto
+				\node[above] at (1, 0) {$4$};
+				\node[above] at (2.5, 0) {$5$};
+				\node[above] at (4, 0) {$7$};
+				
+				% Linee verticali
+				\draw[thick] (1, 0) -- (1, -3.5);
+				\draw[thick] (2.5, 0) -- (2.5, -3.5);
+				\draw[thick] (4, 0) -- (4, -3.5);
+				
+				% Pallino pieno a 5 con linea verso destra
+				\filldraw (2.5, -0.8) circle (2.5pt);
+				\draw[thick] (2.5, -0.8) -- (5, -0.8);
+				
+				% Cerchietti vuoti a 4 e 7 con segmento di collegamento
+				\draw[thick, fill=white] (1, -2.2) circle (2.5pt);
+				\draw[thick, fill=white] (4, -2.2) circle (2.5pt);
+				\draw[thick] (1, -2.2) -- (4, -2.2);
+			\end{scope}
+			
+		\end{tikzpicture}
+	\end{center}
+	$$3\le x<5\cup5\le x<7$$\\
+	\begin{center}
+		\begin{tikzpicture}[scale=1.1, >=stealth]
+			
+			% Asse orizzontale
+			\draw[thick] (1, 0) -- (9, 0);
+			
+			% Tacche verticali sui punti
+			\draw[thick] (3, -0.15) -- (3, 0.15);
+			\draw[thick] (5, -0.15) -- (5, 0.15);
+			\draw[thick] (7, -0.15) -- (7, 0.15);
+			
+			% Etichette in alto
+			\node[above] at (3, 0.2) {$3$};
+			\node[above] at (5, 0.2) {$5$};
+			\node[above] at (7, 0.2) {$7$};
+			
+			% Linea ondulata tra 3 e 7
+			\draw[thick, decorate, decoration={snake, amplitude=1.5pt, segment length=4pt}] (3, 0) -- (7, 0);
+			
+			% Pallini nei punti:
+			% 3: pallino pieno
+			\filldraw (3, 0) circle (2.5pt);
+			% 5: pallino pieno
+			\filldraw (5, 0) circle (2.5pt);
+			% 7: cerchietto vuoto
+			\draw[thick, fill=white] (7, 0) circle (2.5pt);
+			
+		\end{tikzpicture}
+	\end{center}
+	$$\boxed{3\le x<7}$$
 \end{exercise}
 \end{document}
